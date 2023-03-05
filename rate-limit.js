@@ -5,7 +5,7 @@
  * @returns {Promise<boolean>} - A promise that resolves to true if the client has exceeded the rate limit, or false otherwise.
  */
 
-async function rateLimit(ip) {
+async function rateLimit(ip, client) {
   let res;
   try {
     // Increment the value stored in Redis for the given ip key.
@@ -30,3 +30,5 @@ async function rateLimit(ip) {
   // Return false to indicate that the client has not exceeded the rate limit.
   return false;
 }
+
+module.exports = rateLimit;

@@ -17,7 +17,7 @@ client.on('connect', function () {
 });
 
 app.get('/rate-limit', async (req, res) => {
-  let status = await rateLimit(req.ip);
+  let status = await rateLimit(req.ip, client);
   if (status) {
     res.status(429).send('Too many requests - try again later');
     return;
