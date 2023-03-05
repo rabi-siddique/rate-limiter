@@ -1,6 +1,6 @@
 ## Rate Limiter
 
-A simple rate limiting middleware for Express applications using Redis.
+This middleware allows rate limiting of incoming requests to an NodeJS/Express application by tracking the number of requests made by an IP address within a specified time window. Redis is used as a data store to track the number of requests and expiration of the rate limiting key.
 
 ## Installation
 
