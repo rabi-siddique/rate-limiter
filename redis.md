@@ -40,3 +40,19 @@ By default, Redis saves data to disk every 5 minutes if at least 1000 keys have 
 ## Clear Redis
 
 To clear all the data from Redis, you can use the `FLUSHALL` command. This command removes all the keys and their associated values from all the databases in the Redis server.
+
+## To see all keys
+
+To see a list of all the keys in the database, type the `keys *` command and press Enter. This will show you all the keys stored in the database.
+
+## Using Redis for Pub-Sub
+
+To use Pub/Sub Messaging in Redis, you need to use the `PUBLISH`, `SUBSCRIBE`, and `UNSUBSCRIBE` commands in the redis-cli or a Redis client library.
+
+Here are the steps to use Pub/Sub Messaging in Redis:
+
+- Open two or more terminals or command prompts to simulate multiple clients.
+- Start the redis-cli in each terminal or command prompt using the `redis-cli` command.
+- In one terminal or command prompt, subscribe to a channel by typing `SUBSCRIBE channel_name` and pressing Enter, replacing channel_name with the name of the channel you want to subscribe to.
+- In another terminal or command prompt, publish a message to the same channel by typing `PUBLISH channel_name` message and pressing Enter, replacing channel_name with the name of the channel and message with the message you want to publish.
+- The message will be received by the client subscribed to the channel, and it will be displayed in the terminal or command prompt.
