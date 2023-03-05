@@ -8,7 +8,7 @@ Redis can be installed on most operating systems using package managers such as 
 
 ## Getting Started
 
-To start Redis, simply run the redis-server command. By default, Redis listens on port 6379.
+To start Redis, simply run the `redis-server` command. By default, Redis listens on port 6379.
 
 To interact with Redis, you can use the `redis-cli` command-line interface. For example, to set a key-value pair, use the `SET` command:
 
@@ -36,3 +36,7 @@ By default, Redis stores data only in memory. However, Redis provides two mechan
 RDB (Redis Database): a point-in-time snapshot of the dataset
 AOF (Append-Only File): an append-only log of all write operations
 By default, Redis saves data to disk every 5 minutes if at least 1000 keys have changed. These settings can be configured in the redis.conf configuration file.
+
+## Clear Redis
+
+To clear all the data from Redis, you can use the `FLUSHALL` command. This command removes all the keys and their associated values from all the databases in the Redis server.
