@@ -1,14 +1,16 @@
-async function rateLimit(ip, client) {
+const redisClient = require('./redis-client');
+
+async function rateLimit(ip) {
   let requests;
   try {
-    requests = await client.incr(ip);
+    requests = await redisClient.incr(ip);
     console.log(`Requests Made from ${ip}: ${requests}`);
 
     let ttl;
     if (requests == 1) {
-      client.expire(ip, 60);
+      redisClient.expire(ip, 60);
     } else {
-      ttl = await client.ttl(ip);
+      ttl = await redisClient.ttl(ip);
       console.log('TTL is', ttl);
     }
 
