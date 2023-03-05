@@ -6,7 +6,8 @@ A simple rate limiting middleware for Express applications using Redis.
 
 To install the package, run the following command:
 
-```npm install --save express redis
+```
+npm install --save express redis
 
 ```
 
@@ -14,7 +15,7 @@ To install the package, run the following command:
 
 To use the rate limiter, simply require the rateLimit function and pass it an options object with the desired rate limit configuration. Then, add the middleware to your Express app using the `app.use` method.
 
-```
+```javascript
 const express = require('express');
 const rateLimit = require('./rate-limit');
 
@@ -36,7 +37,7 @@ The `rateLimit` middleware will limit the number of requests per IP address with
 
 The rate limiter relies on Redis for storage and rate limiting. `redis-client.js` file contains the configuration for redis with the following content:
 
-```
+```javascript
 const redis = require('redis');
 
 const client = redis.createClient({
