@@ -6,9 +6,8 @@ A simple rate limiting middleware for Express applications using Redis.
 
 To install the package, run the following command:
 
-```
+```bash
 npm install --save express redis
-
 ```
 
 ## Usage
